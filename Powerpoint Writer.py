@@ -1,126 +1,192 @@
-from pptx import Presentation
-from pptx.util import Inches
-import wikipedia
-import os
-import urllib.request
-import random
 import tkinter as tk
 from tkinter import ttk
+from pptx import Presentation
 from tkinter import *
+from pptx.util import Inches
+import threading
+from threading import Thread
+import random
+import wikipedia
+import os
+from selenium import webdriver
+import time
+import urllib.request
+from selenium.webdriver.common.keys import Keys
 
-root = tk.Tk()
-root.title('Azure')
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument("--headless")
+chrome_options.add_argument("--no-startup-window")
 
-window_height = 530
-window_width = 800
+browser = webdriver.Chrome('C:/Users/Pranav Sandeep/Downloads/chromedriver_win32/chromedriver.exe',
+                           chrome_options=chrome_options)
 
-screen_width = root.winfo_screenwidth()
-screen_height = root.winfo_screenheight()
-
-x_cordinate = int((screen_width / 2) - (window_width / 2))
-y_cordinate = int((screen_height / 2) - (window_height / 2))
-
-root.geometry("{}x{}+{}+{}".format(window_width, window_height, x_cordinate, y_cordinate))
-
-style = ttk.Style(root)
-root.tk.call('source', 'azure dark.tcl')
-style.theme_use('azure')
-
-button = Button(root, text="DELET", command=root.destroy)
-
-button.pack()
-
-root.mainloop()
-
-prs = Presentation()
-blank_slide_layout = prs.slide_layouts[0]
-slide = prs.slides.add_slide(blank_slide_layout)
-
-title = slide.shapes.title
-
-subtitle = slide.placeholders[1]
-
-title.text = input("What do you want the title to be?")
-subtitle.text = input("The subtitle?")
-
-Second_layout = prs.slide_layouts[1]
-slide2 = prs.slides.add_slide(Second_layout)
-
-title2 = slide2.shapes.title
-Content = slide2.placeholders[1]
-
-title2.text = input("Aight, what will be the title of the next slide?")
-Topic = input("What should be the topic be?")
-Sentences = int(input("How many sentences should the summary be?"))
-try:
-    Content.text = wikipedia.summary(Topic, sentences=Sentences)
-
-except wikipedia.exceptions.DisambiguationError as e:
-    print("Hmm... There are more than one topics about this topic. Perhaps try being more specific? Or this topic may "
-          "not exist")
-
-Third_layout = prs.slide_layouts[6]
-slide3 = prs.slides.add_slide(Third_layout)
-
-left = top = Inches(1)
-
-wikipage = wikipedia.page(Topic)
-Imgurl = wikipage.images[0]
-
-try:
-    print(Imgurl)
-    Name = random.randint(100000, 1230299999)
-    path = input(
-        "Give me a path to download all your imgages. Remember use '/' as the separator and add a '/' at the end of "
-        "the path.\n For Example, C:/Test/yourdir/ ")
-    urllib.request.urlretrieve(Imgurl, path + str(Name) + ".jpg")
-    pic = slide3.shapes.add_picture(path + str(Name) + ".jpg", left, top)
-
-except Exception as e:
-    print(
-        "Sorry, mate. But there is no wikipedia image for the topic you're searching for. Try inserting one manually.")
-
-Fourth_layout = prs.slide_layouts[1]
-slide4 = prs.slides.add_slide(Fourth_layout)
-
-title4 = slide4.shapes.title
-Content4 = slide4.placeholders[1]
-
-title4.text = input("Aight, what will be the title of the next slide?")
-Topic = input("What should be the topic be?")
-Sentences = int(input("How many sentences should the summary be?"))
-try:
-    Content4.text = wikipedia.summary(Topic, sentences=Sentences)
-
-except wikipedia.exceptions.DisambiguationError as e:
-    print("Hmm... There are more than one topics about this topic. Perhaps try being more specific? Or this topic may "
-          "not exist")
+browser.get("https://www.google.com/")
 
 
+class SampleApp(tk.Tk):
+    def __init__(self):
+        tk.Tk.__init__(self)
+        self.prs = Presentation()
+        style = ttk.Style(self)
+        self.tk.call('source', 'azure dark.tcl')
+        style.theme_use('azure')
+        self.VarList = StringVar(self)
+        self.VarList.set("Normal")
+        self.SlideType = ["Normal", "Wikipedia"]
+        self.SlideBox = OptionMenu(self, self.VarList, *self.SlideType)
+        self.Titlelabel = Label(self, text="What will the title be?")
+        self.Subtitlelabel = Label(self, text="What will the subtitle be?(Not required if you are using wikipedia search or image search)")
+        self.TopicLabel = Label(self, text="What will the topic be?(not required if you are not using wikipedia search)")
+        self.sentencesLabel = Label(self, text="How many sentances should the wikipedia summary be?(not required if you are not using wikipedia search)")
+        self.Title = tk.Entry(self)
+        self.Subtitle = tk.Entry(self)
+        self.Topic = tk.Entry(self)
+        self.Sentences = tk.Entry(self)
+        self.GetImg = tk.Button(self, text="Get images", command=self.Download_Images)
+        self.button = tk.Button(self, text="Get", command=self.CreatePPT)
+        self.SlideBox.pack()
+        self.button.pack()
+        self.Titlelabel.pack()
+        self.Title.pack()
+        self.Subtitlelabel.pack()
+        self.Subtitle.pack()
+        self.TopicLabel.pack()
+        self.Topic.pack()
+        self.sentencesLabel.pack()
+        self.Sentences.pack()
+        self.OpenButton = Button(self, text="OpenPPT", command=self.OpenPPT)
+        self.button2.pack()
+        self.GetImg.pack()
+        self.OpenButton.pack()
 
-root = tk.Tk()
-root.title('Azure')
+    def CreatePPT(self):
 
-window_height = 530
-window_width = 800
+        if self.VarList.get() == "Normal":
+            blank_slide_layout = self.prs.slide_layouts[0]
+            slide = self.prs.slides.add_slide(blank_slide_layout)
 
-screen_width = root.winfo_screenwidth()
-screen_height = root.winfo_screenheight()
+            title = slide.shapes.title
 
-x_cordinate = int((screen_width / 2) - (window_width / 2))
-y_cordinate = int((screen_height / 2) - (window_height / 2))
+            subtitle = slide.placeholders[1]
 
-root.geometry("{}x{}+{}+{}".format(window_width, window_height, x_cordinate, y_cordinate))
+            title.text = self.Title.get()
+            subtitle.text = self.Subtitle.get()
 
-style = ttk.Style(root)
-root.tk.call('source', 'azure dark.tcl')
-style.theme_use('azure')
+            self.prs.save('Test')
 
-button = Button(root, text="DELET", command=root.destroy)
 
-button.pack()
+        elif self.VarList.get() == "Wikipedia":
+            Fourth_layout = self.prs.slide_layouts[1]
+            slide4 = self.prs.slides.add_slide(Fourth_layout)
 
-root.mainloop()
+            title4 = slide4.shapes.title
+            Content4 = slide4.placeholders[1]
 
-prs.save('Englishact.ppt')
-os.startfile('Englishact.ppt')
+            title4.text = self.Title.get()
+            Topic = self.Topic.get()
+            Sentences = int(self.Sentences.get())
+            try:
+                Content4.text = wikipedia.summary(Topic, sentences=Sentences)
+
+            except wikipedia.exceptions.DisambiguationError as e:
+                print(
+                    "Hmm... There are more than one topics about this topic. Perhaps try being more specific? Or this topic may "
+                    "not exist")
+
+            self.prs.save('Test')
+
+
+
+    def SearchTheWeb(self):
+        Fourth_layout = self.prs.slide_layouts[1]
+        slide4 = self.prs.slides.add_slide(Fourth_layout)
+
+        title4 = slide4.shapes.title
+        Content4 = slide4.placeholders[1]
+
+        title4.text = self.Title.get()
+        Topic = self.Topic.get()
+        Sentences = int(self.Sentences.get())
+        try:
+            Content4.text = wikipedia.summary(Topic, sentences=Sentences)
+
+        except wikipedia.exceptions.DisambiguationError as e:
+            print(
+                "Hmm... There are more than one topics about this topic. Perhaps try being more specific? Or this topic may "
+                "not exist")
+
+        self.prs.save('Test')
+
+
+    def Download_Images(self):
+
+        search = browser.find_element_by_name('q')
+
+        search.send_keys(self.Topic.get(), Keys.ENTER)
+
+        elem = browser.find_element_by_link_text('Images')
+        elem.get_attribute('href')
+        elem.click()
+
+        value = 0
+        for i in range(20):
+            browser.execute_script("scrollBy('+ str(value) +',+1000);")
+            value += 1000
+            time.sleep(3)
+
+        elem1 = browser.find_element_by_id('islmp')
+
+        sub = elem1.find_elements_by_tag_name("img")
+
+        try:
+            os.mkdir('downloads')
+        except FileExistsError:
+            pass
+
+        count = 0
+
+
+
+
+        flag = 1
+
+        for i in sub:
+
+            if flag >= 2:
+                break
+            src = i.get_attribute('src')
+            try:
+                if src != None:
+                    src = str(src)
+                    print(src)
+                    count += 1
+                    urllib.request.urlretrieve(src, os.path.join('downloads', 'image' + "A" + '.jpg'))
+                else:
+                    raise TypeError
+            except TypeError:
+                print('fail')
+
+            flag += 1
+
+        Third_layout = self.prs.slide_layouts[6]
+        slide3 = self.prs.slides.add_slide(Third_layout)
+
+        left = top = Inches(1)
+
+
+
+        try:
+            pic = slide3.shapes.add_picture("downloads/" + "imageA" + ".jpg", left, top)
+
+        except Exception as e:
+            print(
+                "Sorry, mate. But there is no wikipedia image for the topic you're searching for. Try inserting one manually.", e)
+
+        self.prs.save('Test')
+
+    def OpenPPT(self):
+        os.startfile('Test')
+
+app = SampleApp()
+
+app.mainloop()

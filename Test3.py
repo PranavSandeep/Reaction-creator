@@ -55,7 +55,6 @@ class SampleApp(tk.Tk):
         self.sentencesLabel.pack()
         self.Sentences.pack()
         self.OpenButton = Button(self, text="OpenPPT", command=self.OpenPPT)
-        self.button2 = tk.Button(self, text="Search the web for info", command=self.SearchTheWeb)
         self.button2.pack()
         self.GetImg.pack()
         self.OpenButton.pack()
