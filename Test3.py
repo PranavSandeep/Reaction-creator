@@ -1,17 +1,23 @@
-import tkinter as tk
-from tkinter import ttk
-from pptx import Presentation
-from tkinter import *
-from pptx.util import Inches
-import threading
-from threading import Thread
-import random
-import wikipedia
-import os
-from selenium import webdriver
-import time
-import urllib.request
-from selenium.webdriver.common.keys import Keys
+try:
+
+    import tkinter as tk
+    from tkinter import ttk
+    from pptx import Presentation
+    from tkinter import *
+    from pptx.util import Inches
+    import threading
+    from threading import Thread
+    import random
+    import wikipedia
+    import os
+    from selenium import webdriver
+    import PIL
+    import time
+    import urllib.request
+    from selenium.webdriver.common.keys import Keys
+
+except ImportError as e:
+    print(e)
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--headless")
@@ -55,7 +61,6 @@ class SampleApp(tk.Tk):
         self.sentencesLabel.pack()
         self.Sentences.pack()
         self.OpenButton = Button(self, text="OpenPPT", command=self.OpenPPT)
-        self.button2.pack()
         self.GetImg.pack()
         self.OpenButton.pack()
 

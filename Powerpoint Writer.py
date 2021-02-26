@@ -1,3 +1,5 @@
+__author__ = "Pranav Sandeep"  # I have no idea what I am doing.
+
 import tkinter as tk
 from tkinter import ttk
 from pptx import Presentation
@@ -35,9 +37,14 @@ class SampleApp(tk.Tk):
         self.SlideType = ["Normal", "Wikipedia"]
         self.SlideBox = OptionMenu(self, self.VarList, *self.SlideType)
         self.Titlelabel = Label(self, text="What will the title be?")
-        self.Subtitlelabel = Label(self, text="What will the subtitle be?(Not required if you are using wikipedia search or image search)")
-        self.TopicLabel = Label(self, text="What will the topic be?(not required if you are not using wikipedia search)")
-        self.sentencesLabel = Label(self, text="How many sentances should the wikipedia summary be?(not required if you are not using wikipedia search)")
+        self.Subtitlelabel = Label(self,
+                                   text="What will the subtitle be?(Not required if you are using wikipedia search or image search)")
+        self.TopicLabel = Label(self,
+                                text="What will the topic be?(not required if you are not using wikipedia search)")
+        self.sentencesLabel = Label(self,
+                                    text="How many sentances should the wikipedia summary be?(not required if you are not using wikipedia search)")
+        self.PPTName = Label(self, text="PPT Name?")
+        self.PPTNameEntry = Entry(self)
         self.Title = tk.Entry(self)
         self.Subtitle = tk.Entry(self)
         self.Topic = tk.Entry(self)
@@ -55,8 +62,9 @@ class SampleApp(tk.Tk):
         self.sentencesLabel.pack()
         self.Sentences.pack()
         self.OpenButton = Button(self, text="OpenPPT", command=self.OpenPPT)
-        self.button2.pack()
         self.GetImg.pack()
+        self.PPTName.pack()
+        self.PPTNameEntry.pack()
         self.OpenButton.pack()
 
     def CreatePPT(self):
@@ -72,7 +80,7 @@ class SampleApp(tk.Tk):
             title.text = self.Title.get()
             subtitle.text = self.Subtitle.get()
 
-            self.prs.save('Test')
+            self.prs.save(self.PPTNameEntry.get() + ".pptx")
 
 
         elif self.VarList.get() == "Wikipedia":
@@ -93,30 +101,7 @@ class SampleApp(tk.Tk):
                     "Hmm... There are more than one topics about this topic. Perhaps try being more specific? Or this topic may "
                     "not exist")
 
-            self.prs.save('Test')
-
-
-
-    def SearchTheWeb(self):
-        Fourth_layout = self.prs.slide_layouts[1]
-        slide4 = self.prs.slides.add_slide(Fourth_layout)
-
-        title4 = slide4.shapes.title
-        Content4 = slide4.placeholders[1]
-
-        title4.text = self.Title.get()
-        Topic = self.Topic.get()
-        Sentences = int(self.Sentences.get())
-        try:
-            Content4.text = wikipedia.summary(Topic, sentences=Sentences)
-
-        except wikipedia.exceptions.DisambiguationError as e:
-            print(
-                "Hmm... There are more than one topics about this topic. Perhaps try being more specific? Or this topic may "
-                "not exist")
-
-        self.prs.save('Test')
-
+            self.prs.save(self.PPTNameEntry.get() + ".pptx")
 
     def Download_Images(self):
 
@@ -145,9 +130,6 @@ class SampleApp(tk.Tk):
 
         count = 0
 
-
-
-
         flag = 1
 
         for i in sub:
@@ -173,19 +155,19 @@ class SampleApp(tk.Tk):
 
         left = top = Inches(1)
 
-
-
         try:
             pic = slide3.shapes.add_picture("downloads/" + "imageA" + ".jpg", left, top)
 
         except Exception as e:
             print(
-                "Sorry, mate. But there is no wikipedia image for the topic you're searching for. Try inserting one manually.", e)
+                "Sorry, mate. But there is no wikipedia image for the topic you're searching for. Try inserting one manually.",
+                e)
 
-        self.prs.save('Test')
+        self.prs.save(self.PPTNameEntry.get() + ".pptx")
 
     def OpenPPT(self):
-        os.startfile('Test')
+        os.startfile(self.PPTNameEntry.get() + ".pptx")
+
 
 app = SampleApp()
 
