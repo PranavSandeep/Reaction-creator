@@ -21,3 +21,5 @@ Powerpoint Writer.spec
 dist/*
 
 downloads/*
+
+build/*
