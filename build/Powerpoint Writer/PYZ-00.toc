@@ -611,11 +611,11 @@
   ('stringprep',
    'c:\\users\\pranav sandeep\\python 3.9\\lib\\stringprep.py',
    'PYMODULE'),
-  ('_py_abc',
-   'c:\\users\\pranav sandeep\\python 3.9\\lib\\_py_abc.py',
-   'PYMODULE'),
   ('tracemalloc',
    'c:\\users\\pranav sandeep\\python 3.9\\lib\\tracemalloc.py',
+   'PYMODULE'),
+  ('_py_abc',
+   'c:\\users\\pranav sandeep\\python 3.9\\lib\\_py_abc.py',
    'PYMODULE'),
   ('selenium.webdriver.common.keys',
    'c:\\users\\pranav sandeep\\python '
@@ -1357,9 +1357,21 @@
    'c:\\users\\pranav sandeep\\python '
    '3.9\\lib\\site-packages\\lxml\\__init__.py',
    'PYMODULE'),
-  ('lxml.pyclasslookup',
+  ('lxml.html.formfill',
    'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\lxml\\pyclasslookup.py',
+   '3.9\\lib\\site-packages\\lxml\\html\\formfill.py',
+   'PYMODULE'),
+  ('lxml.html.builder',
+   'c:\\users\\pranav sandeep\\python '
+   '3.9\\lib\\site-packages\\lxml\\html\\builder.py',
+   'PYMODULE'),
+  ('lxml.html._setmixin',
+   'c:\\users\\pranav sandeep\\python '
+   '3.9\\lib\\site-packages\\lxml\\html\\_setmixin.py',
+   'PYMODULE'),
+  ('lxml.html',
+   'c:\\users\\pranav sandeep\\python '
+   '3.9\\lib\\site-packages\\lxml\\html\\__init__.py',
    'PYMODULE'),
   ('lxml.isoschematron',
    'c:\\users\\pranav sandeep\\python '
@@ -1369,33 +1381,29 @@
    'c:\\users\\pranav sandeep\\python '
    '3.9\\lib\\site-packages\\lxml\\includes\\__init__.py',
    'PYMODULE'),
-  ('lxml.html.formfill',
+  ('lxml.usedoctest',
    'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\lxml\\html\\formfill.py',
+   '3.9\\lib\\site-packages\\lxml\\usedoctest.py',
    'PYMODULE'),
-  ('lxml.html.defs',
+  ('lxml.html.html5parser',
    'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\lxml\\html\\defs.py',
+   '3.9\\lib\\site-packages\\lxml\\html\\html5parser.py',
+   'PYMODULE'),
+  ('lxml.html._html5builder',
+   'c:\\users\\pranav sandeep\\python '
+   '3.9\\lib\\site-packages\\lxml\\html\\_html5builder.py',
    'PYMODULE'),
   ('lxml.html._diffcommand',
    'c:\\users\\pranav sandeep\\python '
    '3.9\\lib\\site-packages\\lxml\\html\\_diffcommand.py',
    'PYMODULE'),
-  ('lxml.html.builder',
+  ('lxml.html.defs',
    'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\lxml\\html\\builder.py',
+   '3.9\\lib\\site-packages\\lxml\\html\\defs.py',
    'PYMODULE'),
-  ('lxml.html.ElementSoup',
+  ('lxml.ElementInclude',
    'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\lxml\\html\\ElementSoup.py',
-   'PYMODULE'),
-  ('lxml.usedoctest',
-   'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\lxml\\usedoctest.py',
-   'PYMODULE'),
-  ('lxml.html.usedoctest',
-   'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\lxml\\html\\usedoctest.py',
+   '3.9\\lib\\site-packages\\lxml\\ElementInclude.py',
    'PYMODULE'),
   ('lxml.cssselect',
    'c:\\users\\pranav sandeep\\python '
@@ -1405,31 +1413,23 @@
    'c:\\users\\pranav sandeep\\python '
    '3.9\\lib\\site-packages\\lxml\\html\\soupparser.py',
    'PYMODULE'),
+  ('lxml.pyclasslookup',
+   'c:\\users\\pranav sandeep\\python '
+   '3.9\\lib\\site-packages\\lxml\\pyclasslookup.py',
+   'PYMODULE'),
+  ('lxml.html.ElementSoup',
+   'c:\\users\\pranav sandeep\\python '
+   '3.9\\lib\\site-packages\\lxml\\html\\ElementSoup.py',
+   'PYMODULE'),
+  ('lxml.html.usedoctest',
+   'c:\\users\\pranav sandeep\\python '
+   '3.9\\lib\\site-packages\\lxml\\html\\usedoctest.py',
+   'PYMODULE'),
   ('lxml.doctestcompare',
    'c:\\users\\pranav sandeep\\python '
    '3.9\\lib\\site-packages\\lxml\\doctestcompare.py',
    'PYMODULE'),
   ('cgi', 'c:\\users\\pranav sandeep\\python 3.9\\lib\\cgi.py', 'PYMODULE'),
-  ('lxml.html._setmixin',
-   'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\lxml\\html\\_setmixin.py',
-   'PYMODULE'),
-  ('lxml.ElementInclude',
-   'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\lxml\\ElementInclude.py',
-   'PYMODULE'),
-  ('lxml.html.html5parser',
-   'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\lxml\\html\\html5parser.py',
-   'PYMODULE'),
-  ('lxml.html',
-   'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\lxml\\html\\__init__.py',
-   'PYMODULE'),
-  ('lxml.html._html5builder',
-   'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\lxml\\html\\_html5builder.py',
-   'PYMODULE'),
   ('bs4.builder._html5lib',
    'c:\\users\\pranav sandeep\\python '
    '3.9\\lib\\site-packages\\bs4\\builder\\_html5lib.py',
@@ -1643,100 +1643,61 @@
   ('PIL.Image',
    'c:\\users\\pranav sandeep\\python 3.9\\lib\\site-packages\\PIL\\Image.py',
    'PYMODULE'),
-  ('PIL.XpmImagePlugin',
+  ('PIL.FpxImagePlugin',
    'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\XpmImagePlugin.py',
+   '3.9\\lib\\site-packages\\PIL\\FpxImagePlugin.py',
    'PYMODULE'),
   ('PIL.ImageFile',
    'c:\\users\\pranav sandeep\\python '
    '3.9\\lib\\site-packages\\PIL\\ImageFile.py',
    'PYMODULE'),
+  ('PIL.EpsImagePlugin',
+   'c:\\users\\pranav sandeep\\python '
+   '3.9\\lib\\site-packages\\PIL\\EpsImagePlugin.py',
+   'PYMODULE'),
   ('PIL.PalmImagePlugin',
    'c:\\users\\pranav sandeep\\python '
    '3.9\\lib\\site-packages\\PIL\\PalmImagePlugin.py',
    'PYMODULE'),
-  ('PIL.Jpeg2KImagePlugin',
+  ('PIL.SunImagePlugin',
    'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\Jpeg2KImagePlugin.py',
+   '3.9\\lib\\site-packages\\PIL\\SunImagePlugin.py',
    'PYMODULE'),
-  ('PIL.IcnsImagePlugin',
+  ('PIL.MpegImagePlugin',
    'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\IcnsImagePlugin.py',
+   '3.9\\lib\\site-packages\\PIL\\MpegImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.PixarImagePlugin',
+   'c:\\users\\pranav sandeep\\python '
+   '3.9\\lib\\site-packages\\PIL\\PixarImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.FliImagePlugin',
+   'c:\\users\\pranav sandeep\\python '
+   '3.9\\lib\\site-packages\\PIL\\FliImagePlugin.py',
    'PYMODULE'),
   ('PIL.PcdImagePlugin',
    'c:\\users\\pranav sandeep\\python '
    '3.9\\lib\\site-packages\\PIL\\PcdImagePlugin.py',
    'PYMODULE'),
-  ('PIL.GribStubImagePlugin',
+  ('PIL.PsdImagePlugin',
    'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\GribStubImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.DdsImagePlugin',
-   'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\DdsImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.MicImagePlugin',
-   'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\MicImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.BufrStubImagePlugin',
-   'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\BufrStubImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.SpiderImagePlugin',
-   'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\SpiderImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.ImageTk',
-   'c:\\users\\pranav sandeep\\python 3.9\\lib\\site-packages\\PIL\\ImageTk.py',
-   'PYMODULE'),
-  ('PIL.SgiImagePlugin',
-   'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\SgiImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.PcxImagePlugin',
-   'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\PcxImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.FitsStubImagePlugin',
-   'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\FitsStubImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.XVThumbImagePlugin',
-   'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\XVThumbImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.MpoImagePlugin',
-   'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\MpoImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.GbrImagePlugin',
-   'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\GbrImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.ImtImagePlugin',
-   'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\ImtImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.IptcImagePlugin',
-   'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\IptcImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.Hdf5StubImagePlugin',
-   'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\Hdf5StubImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.FpxImagePlugin',
-   'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\FpxImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.XbmImagePlugin',
-   'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\XbmImagePlugin.py',
+   '3.9\\lib\\site-packages\\PIL\\PsdImagePlugin.py',
    'PYMODULE'),
   ('PIL.McIdasImagePlugin',
    'c:\\users\\pranav sandeep\\python '
    '3.9\\lib\\site-packages\\PIL\\McIdasImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.IcnsImagePlugin',
+   'c:\\users\\pranav sandeep\\python '
+   '3.9\\lib\\site-packages\\PIL\\IcnsImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.DcxImagePlugin',
+   'c:\\users\\pranav sandeep\\python '
+   '3.9\\lib\\site-packages\\PIL\\DcxImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.WmfImagePlugin',
+   'c:\\users\\pranav sandeep\\python '
+   '3.9\\lib\\site-packages\\PIL\\WmfImagePlugin.py',
    'PYMODULE'),
   ('PIL.PdfImagePlugin',
    'c:\\users\\pranav sandeep\\python '
@@ -1750,69 +1711,108 @@
    'c:\\users\\pranav sandeep\\python '
    '3.9\\lib\\site-packages\\PIL\\ImageSequence.py',
    'PYMODULE'),
+  ('PIL.BlpImagePlugin',
+   'c:\\users\\pranav sandeep\\python '
+   '3.9\\lib\\site-packages\\PIL\\BlpImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.SgiImagePlugin',
+   'c:\\users\\pranav sandeep\\python '
+   '3.9\\lib\\site-packages\\PIL\\SgiImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.CurImagePlugin',
+   'c:\\users\\pranav sandeep\\python '
+   '3.9\\lib\\site-packages\\PIL\\CurImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.DdsImagePlugin',
+   'c:\\users\\pranav sandeep\\python '
+   '3.9\\lib\\site-packages\\PIL\\DdsImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.IptcImagePlugin',
+   'c:\\users\\pranav sandeep\\python '
+   '3.9\\lib\\site-packages\\PIL\\IptcImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.GbrImagePlugin',
+   'c:\\users\\pranav sandeep\\python '
+   '3.9\\lib\\site-packages\\PIL\\GbrImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.XpmImagePlugin',
+   'c:\\users\\pranav sandeep\\python '
+   '3.9\\lib\\site-packages\\PIL\\XpmImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.MicImagePlugin',
+   'c:\\users\\pranav sandeep\\python '
+   '3.9\\lib\\site-packages\\PIL\\MicImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.SpiderImagePlugin',
+   'c:\\users\\pranav sandeep\\python '
+   '3.9\\lib\\site-packages\\PIL\\SpiderImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.ImageTk',
+   'c:\\users\\pranav sandeep\\python 3.9\\lib\\site-packages\\PIL\\ImageTk.py',
+   'PYMODULE'),
+  ('PIL.MpoImagePlugin',
+   'c:\\users\\pranav sandeep\\python '
+   '3.9\\lib\\site-packages\\PIL\\MpoImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.Jpeg2KImagePlugin',
+   'c:\\users\\pranav sandeep\\python '
+   '3.9\\lib\\site-packages\\PIL\\Jpeg2KImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.Hdf5StubImagePlugin',
+   'c:\\users\\pranav sandeep\\python '
+   '3.9\\lib\\site-packages\\PIL\\Hdf5StubImagePlugin.py',
+   'PYMODULE'),
   ('PIL.TgaImagePlugin',
    'c:\\users\\pranav sandeep\\python '
    '3.9\\lib\\site-packages\\PIL\\TgaImagePlugin.py',
    'PYMODULE'),
-  ('PIL.MspImagePlugin',
+  ('PIL.BufrStubImagePlugin',
    'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\MspImagePlugin.py',
+   '3.9\\lib\\site-packages\\PIL\\BufrStubImagePlugin.py',
    'PYMODULE'),
-  ('PIL.ImImagePlugin',
+  ('PIL.ImtImagePlugin',
    'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\ImImagePlugin.py',
+   '3.9\\lib\\site-packages\\PIL\\ImtImagePlugin.py',
    'PYMODULE'),
   ('PIL.FtexImagePlugin',
    'c:\\users\\pranav sandeep\\python '
    '3.9\\lib\\site-packages\\PIL\\FtexImagePlugin.py',
    'PYMODULE'),
-  ('PIL.PsdImagePlugin',
+  ('PIL.XVThumbImagePlugin',
    'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\PsdImagePlugin.py',
+   '3.9\\lib\\site-packages\\PIL\\XVThumbImagePlugin.py',
    'PYMODULE'),
-  ('PIL.FliImagePlugin',
+  ('PIL.XbmImagePlugin',
    'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\FliImagePlugin.py',
+   '3.9\\lib\\site-packages\\PIL\\XbmImagePlugin.py',
    'PYMODULE'),
-  ('PIL.DcxImagePlugin',
+  ('PIL.GribStubImagePlugin',
    'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\DcxImagePlugin.py',
+   '3.9\\lib\\site-packages\\PIL\\GribStubImagePlugin.py',
    'PYMODULE'),
   ('PIL.WebPImagePlugin',
    'c:\\users\\pranav sandeep\\python '
    '3.9\\lib\\site-packages\\PIL\\WebPImagePlugin.py',
    'PYMODULE'),
-  ('PIL.MpegImagePlugin',
-   'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\MpegImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.BlpImagePlugin',
-   'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\BlpImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.PixarImagePlugin',
-   'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\PixarImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.EpsImagePlugin',
-   'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\EpsImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.WmfImagePlugin',
-   'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\WmfImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.SunImagePlugin',
-   'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\SunImagePlugin.py',
-   'PYMODULE'),
   ('PIL.IcoImagePlugin',
    'c:\\users\\pranav sandeep\\python '
    '3.9\\lib\\site-packages\\PIL\\IcoImagePlugin.py',
    'PYMODULE'),
-  ('PIL.CurImagePlugin',
+  ('PIL.FitsStubImagePlugin',
    'c:\\users\\pranav sandeep\\python '
-   '3.9\\lib\\site-packages\\PIL\\CurImagePlugin.py',
+   '3.9\\lib\\site-packages\\PIL\\FitsStubImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.ImImagePlugin',
+   'c:\\users\\pranav sandeep\\python '
+   '3.9\\lib\\site-packages\\PIL\\ImImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.PcxImagePlugin',
+   'c:\\users\\pranav sandeep\\python '
+   '3.9\\lib\\site-packages\\PIL\\PcxImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.MspImagePlugin',
+   'c:\\users\\pranav sandeep\\python '
+   '3.9\\lib\\site-packages\\PIL\\MspImagePlugin.py',
    'PYMODULE'),
   ('PIL.TiffImagePlugin',
    'c:\\users\\pranav sandeep\\python '

@@ -19,7 +19,7 @@ chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--no-startup-window")
 
-browser = webdriver.Chrome('C:/Users/Pranav Sandeep/Downloads/chromedriver_win32/chromedriver.exe',
+browser = webdriver.Chrome('Chrome Driver/chromedriver.exe',
                            chrome_options=chrome_options)
 
 browser.get("https://www.google.com/")
@@ -35,24 +35,23 @@ class SampleApp(tk.Tk):
         self.VarList = StringVar(self)
         self.VarList.set("Normal")
         self.SlideType = ["Normal", "Wikipedia"]
-        self.SlideBox = OptionMenu(self, self.VarList, *self.SlideType)
-        self.Titlelabel = Label(self, text="What will the title be?")
-        self.Subtitlelabel = Label(self,
+        self.SlideBox = tk.OptionMenu(self, self.VarList, *self.SlideType)
+        self.Titlelabel = ttk.Label(self, text="What will the title be?")
+        self.Subtitlelabel = ttk.Label(self,
                                    text="What will the subtitle be?(Not required if you are using wikipedia search or image search)")
-        self.TopicLabel = Label(self,
+        self.TopicLabel = ttk.Label(self,
                                 text="What will the topic be?(not required if you are not using wikipedia search)")
-        self.sentencesLabel = Label(self,
+        self.sentencesLabel = ttk.Label(self,
                                     text="How many sentances should the wikipedia summary be?(not required if you are not using wikipedia search)")
-        self.PPTName = Label(self, text="PPT Name?")
-        self.PPTNameEntry = Entry(self)
-        self.Title = tk.Entry(self)
-        self.Subtitle = tk.Entry(self)
-        self.Topic = tk.Entry(self)
-        self.Sentences = tk.Entry(self)
-        self.GetImg = tk.Button(self, text="Get images", command=self.Download_Images)
-        self.button = tk.Button(self, text="Get", command=self.CreatePPT)
+        self.PPTName = ttk.Label(self, text="PPT Name?")
+        self.PPTNameEntry = ttk.Entry(self)
+        self.Title = ttk.Entry(self)
+        self.Subtitle = ttk.Entry(self)
+        self.Topic = ttk.Entry(self)
+        self.Sentences = ttk.Entry(self)
+        self.GetImg = ttk.Button(self, text="Get images", command=self.Download_Images)
+        self.button = ttk.Button(self, text="Add slide", command=self.CreatePPT)
         self.SlideBox.pack()
-        self.button.pack()
         self.Titlelabel.pack()
         self.Title.pack()
         self.Subtitlelabel.pack()
@@ -61,8 +60,9 @@ class SampleApp(tk.Tk):
         self.Topic.pack()
         self.sentencesLabel.pack()
         self.Sentences.pack()
-        self.OpenButton = Button(self, text="OpenPPT", command=self.OpenPPT)
+        self.OpenButton = ttk.Button(self, text="OpenPPT", command=self.OpenPPT)
         self.GetImg.pack()
+        self.button.pack()
         self.PPTName.pack()
         self.PPTNameEntry.pack()
         self.OpenButton.pack()
