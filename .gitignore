@@ -1,0 +1,6 @@
+.idea/
+Src/Python/__pycache__/LoadUserSettings.cpython-39.pyc
+Src/Python/__pycache__/
+Src/Python/dist/*
+Src/Python/Test.py
+Src/Python/main.spec
